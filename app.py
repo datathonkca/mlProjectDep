@@ -17,8 +17,7 @@ def predict():
     features_models=np.array([features_models]).reshape(1,4)
     import joblib
     model=joblib.load('RFR.ml')
-    import math
-    prediction=math.ceil(np.expm1(model.predict(features_models)[0]))
+    prediction=np.expm1(model.predict(features_models)[0])
     import pandas as pd
     date_entry=pd.to_datetime(date_entry)
     from datetime import datetime, timedelta
